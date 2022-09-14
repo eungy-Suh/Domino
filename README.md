@@ -12,3 +12,10 @@
 
 ---
 ## Detail View
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/104630194/190061509-67524509-31e5-4094-bc60-f6491939aec3.gif),
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/104630194/190062659-42765e58-6859-4eeb-aaa6-c481946ec05b.gif)
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/104630194/190064042-dd6f0c79-e097-4489-866f-2af2fd1a1634.gif),
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/104630194/190064051-e6dbb73c-3322-4abb-9d1b-757e2b1d5a8c.gif)
+
+
+
