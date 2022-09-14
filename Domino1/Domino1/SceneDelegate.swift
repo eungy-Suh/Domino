@@ -25,19 +25,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let secondVC = WishTableViewController()
         let navigationController2 = UINavigationController(rootViewController: secondVC)
-        secondVC.navigationItem.title = "1234"
+        secondVC.navigationItem.title = "Wish List"
 
         navigationController.tabBarItem = UITabBarItem(title: "Domino`s", image: UIImage(systemName: "app.fill"), tag: 0)
         secondVC.tabBarItem = UITabBarItem(title: "Wish list", image: UIImage(systemName: "app.fill"), tag: 1)
 
-
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [navigationController, navigationController2]
-                
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
-        
+        window?.backgroundColor = .systemBackground
         
     }
 }

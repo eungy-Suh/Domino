@@ -12,18 +12,18 @@ class CustomTableViewCell: UITableViewCell {
     static let identifier = "mainCell"
     
     let myImageView = UIImageView()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(myImageView)
-    setUI()
+        setUI()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func setUI() {
-    
+        
         myImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),

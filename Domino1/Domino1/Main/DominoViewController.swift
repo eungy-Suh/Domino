@@ -18,14 +18,12 @@ class DominoViewController: UIViewController {
         tableView.delegate = self
         view.backgroundColor = .systemBackground
         setUI()
-        
     }
     private func setUI() {
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier) //셀 등록
         tableView.dataSource = self
         tableView.frame = view.frame
         tableView.rowHeight = 100
-        tableView.backgroundColor = .red
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,8 +35,6 @@ class DominoViewController: UIViewController {
         ])
     }
 }
-
-
 // MARK: -UITableViewDelegate
 extension DominoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +42,6 @@ extension DominoViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else { fatalError() }
-//        cell.imageView?.image = UIImage(named: menu[indexPath.row])
         cell.myImageView.image = UIImage(named: menu[indexPath.row])
         return cell
     }
@@ -55,31 +50,40 @@ extension DominoViewController: UITableViewDataSource {
         headerView.image = UIImage(named:"logo")
         headerView.sizeToFit()
         tableView.addSubview(headerView)
-        headerView.backgroundColor = .blue
         headerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             headerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            headerView.widthAnchor.constraint(equalToConstant: 250),
+            headerView.widthAnchor.constraint(equalToConstant: 300),
             headerView.heightAnchor.constraint(equalToConstant: 270),
         ])
         return headerView
     }
-//    func tableView(_ tableView: UITableView, heighFortHeaderInSection section: Int) -> CGFloat {
-//            return 270
-//    }
-
 }
 extension DominoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //   print(indexPath.section) //didselectROwAt: 몇번째 줄의 셀을 눌렀을때
         if indexPath.row == 0 {
             let nextVC = SuperSeedViewController()
-//            present(nextVC, animated: true) //<-새로 만든 뷰컨트롤
             self.navigationController?.pushViewController(nextVC, animated: true)
         }  else
         if indexPath.row == 1 {
             let next2VC = PrimiumViewController()
           self.navigationController?.pushViewController(next2VC, animated: true)
+        } else
+        if indexPath.row == 2 {
+            let next3VC = ClassicTableViewController()
+          self.navigationController?.pushViewController(next3VC, animated: true)
+        }else
+        if indexPath.row == 3 {
+            let next4VC = SideTableViewController()
+          self.navigationController?.pushViewController(next4VC, animated: true)
+        }else
+        if indexPath.row == 4 {
+            let next5VC = DrinkTableViewController()
+          self.navigationController?.pushViewController(next5VC, animated: true)
+        }else
+        if indexPath.row == 5 {
+            let next6VC = SauceViewController()
+          self.navigationController?.pushViewController(next6VC, animated: true)
         }
     }
 }
