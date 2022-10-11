@@ -10,18 +10,13 @@ import UIKit
 class SauceViewController: UIViewController, UITableViewDelegate {
     
     let tableView = UITableView()
-    
-    struct Product {
-       var productTitle: String
-       var productImage: UIImage
-       var productSubTitle: String
-   }
+
         let SauceMenu: [Product] = [
-            Product(productTitle: "갈릭 디핑 소스", productImage:UIImage(named: "갈릭 디핑 소스")!, productSubTitle: "500원"),
-            Product(productTitle: "스위트 칠리소스", productImage:UIImage(named: "스위트 칠리소스")!, productSubTitle: "500원"),
-            Product(productTitle: "우리 피클L", productImage:UIImage(named: "우리 피클 L")!, productSubTitle: "500원"),
-            Product(productTitle: "우리 피클M", productImage:UIImage(named: "우리 피클 M")!, productSubTitle: "500원"),
-            Product(productTitle: "핫소스", productImage:UIImage(named: "핫소스")!, productSubTitle: "500원"),
+            Product(productTitle: "갈릭 디핑 소스", productImage:UIImage(named: "aa")!, productSubTitle: "500원"),
+            Product(productTitle: "스위트 칠리소스", productImage:UIImage(named: "bb")!, productSubTitle: "500원"),
+            Product(productTitle: "우리 피클L", productImage:UIImage(named: "cc")!, productSubTitle: "500원"),
+            Product(productTitle: "우리 피클M", productImage:UIImage(named: "dd")!, productSubTitle: "500원"),
+            Product(productTitle: "핫소스", productImage:UIImage(named: "ee")!, productSubTitle: "500원"),
         ]
     
     override func viewDidLoad() {
@@ -31,7 +26,7 @@ class SauceViewController: UIViewController, UITableViewDelegate {
         navigationItem.title = "피클/소스"
     }
 }
-//MARK: ClassicDataSource,Delegate
+//MARK: SauceDataSource,Delegate
 extension SauceViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SauceMenu.count
@@ -49,26 +44,26 @@ extension SauceViewController: UITableViewDataSource {
             let nextVC = DetailViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)
             nextVC.title = "갈릭 디핑 소스"
-            DetailViewController.imageView.image = UIImage(named: "갈릭 디핑 소스")
+            nextVC.imageView.image = UIImage(named: "aa")
         case 1 :
             let nextVC = DetailViewController()
             nextVC.title = "스위트 칠리소스"
-            DetailViewController.imageView.image = UIImage(named: "스위트 칠리소스")
+            nextVC.imageView.image = UIImage(named: "bb")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 2 :
             let nextVC = DetailViewController()
             nextVC.title = "우리 피클 L"
-            DetailViewController.imageView.image = UIImage(named: "우리 피클 L")
+            nextVC.imageView.image = UIImage(named: "cc")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 3 :
             let nextVC = DetailViewController()
             nextVC.title = "우리 피클 M"
-            DetailViewController.imageView.image = UIImage(named: "우리 피클 M")
+            nextVC.imageView.image = UIImage(named: "dd")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 4 :
             let nextVC = DetailViewController()
             nextVC.title = "핫소스"
-            DetailViewController.imageView.image = UIImage(named: "핫소스")
+            nextVC.imageView.image = UIImage(named: "ee")
             self.navigationController?.pushViewController(nextVC, animated: true)
 
         default:

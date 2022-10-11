@@ -11,20 +11,13 @@ class PrimiumViewController: UIViewController, UITableViewDelegate {
     
     let tableView = UITableView()
     
-    struct Product {
-       var productTitle: String
-       var productImage: UIImage
-       var productSubTitle: String
-   }
-    
         let primiumPizza: [Product] = [
-            Product(productTitle: "더블크러스트 이베리코", productImage: UIImage(named: "더블크러스트 이베리코.jpg")!, productSubTitle: "10,000원"),
-            Product(productTitle: "와규 앤 비스테카", productImage: UIImage(named: "와규 앤 비스테카.jpg")!, productSubTitle: "10,000원"),
-            Product(productTitle: "블랙타이거 슈림프", productImage: UIImage(named: "블랙타이거 슈림프.jpg")!, productSubTitle: "10,000원"),
-            Product(productTitle: "블랙앵거스 스테이크", productImage: UIImage(named: "블랙앵거스 스테이크.jpg")!, productSubTitle: "10,000원"),
-            Product(productTitle: "직화 스테이크", productImage: UIImage(named: "직화 스테이크.jpg")!, productSubTitle: "10,000원"),
+            Product(productTitle: "더블크러스트 이베리코", productImage: UIImage(named: "u")!, productSubTitle: "10,000원"),
+            Product(productTitle: "와규 앤 비스테카", productImage: UIImage(named: "v")!, productSubTitle: "10,000원"),
+            Product(productTitle: "블랙타이거 슈림프", productImage: UIImage(named: "x")!, productSubTitle: "10,000원"),
+            Product(productTitle: "블랙앵거스 스테이크", productImage: UIImage(named: "y")!, productSubTitle: "10,000원"),
+            Product(productTitle: "직화 스테이크", productImage: UIImage(named: "z")!, productSubTitle: "10,000원"),
         ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -50,26 +43,26 @@ extension PrimiumViewController: UITableViewDataSource {
             let nextVC = DetailViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)
             nextVC.title = "더블크러스트 이베리코"
-            DetailViewController.imageView.image = UIImage(named: "더블크러스트 이베리코")
+            nextVC.imageView.image = UIImage(named: "u")
         case 1 :
             let nextVC = DetailViewController()
             nextVC.title = "와규 앤 비스테카"
-            DetailViewController.imageView.image = UIImage(named: "와규 앤 비스테카")
+            nextVC.imageView.image = UIImage(named: "v")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 2 :
             let nextVC = DetailViewController()
             nextVC.title = "블랙타이거 슈림프"
-            DetailViewController.imageView.image = UIImage(named: "블랙타이거 슈림프")
+            nextVC.imageView.image = UIImage(named: "x")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 3 :
             let nextVC = DetailViewController()
             nextVC.title = "블랙앵거스 스테이크"
-            DetailViewController.imageView.image = UIImage(named: "블랙앵거스 스테이크")
+            nextVC.imageView.image = UIImage(named: "y")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 4 :
             let nextVC = DetailViewController()
             nextVC.title = "직화 스테이크"
-            DetailViewController.imageView.image = UIImage(named: "직화 스테이크")
+            nextVC.imageView.image = UIImage(named: "z")
             self.navigationController?.pushViewController(nextVC, animated: true)
 
         default:

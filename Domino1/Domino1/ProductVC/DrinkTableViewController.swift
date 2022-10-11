@@ -10,17 +10,11 @@ class DrinkTableViewController: UIViewController, UITableViewDelegate {
     
     let tableView = UITableView()
     
-    struct Product {
-       var productTitle: String
-       var productImage: UIImage
-       var productSubTitle: String
-   }
     let DrinkMenu: [Product] = [
-        Product(productTitle: "미닛메이드", productImage:UIImage(named: "미닛메이드 스파클링 청포도")!, productSubTitle: "3,000원"),
-        Product(productTitle: "스프라이트", productImage:UIImage(named: "스프라이트")!, productSubTitle: "3,000원"),
-        Product(productTitle: "코카콜라 제로", productImage:UIImage(named: "코카콜라 제로")!, productSubTitle: "3,000원"),
-        Product(productTitle: "코카콜라", productImage:UIImage(named: "코카콜라")!, productSubTitle: "3,000원"),
-
+        Product(productTitle: "미닛메이드", productImage:UIImage(named: "k")!, productSubTitle: "3,000원"),
+        Product(productTitle: "스프라이트", productImage:UIImage(named: "l")!, productSubTitle: "3,000원"),
+        Product(productTitle: "코카콜라 제로", productImage:UIImage(named: "m")!, productSubTitle: "3,000원"),
+        Product(productTitle: "코카콜라", productImage:UIImage(named: "n")!, productSubTitle: "3,000원"),
     ]
     
     override func viewDidLoad() {
@@ -48,21 +42,21 @@ extension DrinkTableViewController: UITableViewDataSource {
             let nextVC = DetailViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)
             nextVC.title = "미닛메이드"
-            DetailViewController.imageView.image = UIImage(named: "미닛메이드")
+            nextVC.imageView.image = UIImage(named: "k")
         case 1 :
             let nextVC = DetailViewController()
             nextVC.title = "스프라이트"
-            DetailViewController.imageView.image = UIImage(named: "스프라이트")
+            nextVC.imageView.image = UIImage(named: "l")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 2 :
             let nextVC = DetailViewController()
             nextVC.title = "코카콜라 제로"
-            DetailViewController.imageView.image = UIImage(named: "코카콜라 제로")
+            nextVC.imageView.image = UIImage(named: "m")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 3 :
             let nextVC = DetailViewController()
             nextVC.title = "코카콜라"
-            DetailViewController.imageView.image = UIImage(named: "코카콜라")
+            nextVC.imageView.image = UIImage(named: "n")
             self.navigationController?.pushViewController(nextVC, animated: true)
 
         default:

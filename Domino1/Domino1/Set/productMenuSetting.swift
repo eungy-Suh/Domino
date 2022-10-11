@@ -5,5 +5,12 @@
 //  Created by 서은지 on 2022/09/08.
 //
 
-import Foundation
+import UIKit
+
+
+struct Product {
+   var productTitle: String
+   var productImage: UIImage
+   var productSubTitle: String
+}
 

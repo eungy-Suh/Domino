@@ -8,14 +8,15 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
-  static var imageView = UIImageView()
+    var imageView = UIImageView()
     let downButton = UIButton(type: .custom)
     let upButton = UIButton(type: .custom)
     let centerLabel = UILabel()
     let stackView = UIStackView()
     var centerCount = 0
-    let dataManager = dataManager.shared()
+    
+    let dataManager = DataManager.shared
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,12 @@ class DetailViewController: UIViewController {
         upButton.addTarget(self, action: #selector(upBtTapped(_:)), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "담기", style: .plain, target: self, action: #selector(addTappedButton(_:)))
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let safeTitle = self.title else { return }
+        print(safeTitle)
+        centerLabel.text = String(dataManager.orderMenu[safeTitle] ?? 0) + "개"
     }
 }
 extension DetailViewController {
@@ -41,7 +48,11 @@ extension DetailViewController {
     }
     @objc func addTappedButton(_ sender: UIButton) {
         if centerCount > 0 {
-           // dataManager.shared.ß
+            guard let orderItem = self.title else {return}
+            dataManager.orderMenu[orderItem] = centerCount
+            dataManager.orderMenuKey = Array(dataManager.orderMenu.keys)
+            dataManager.orderMenuValue = Array(dataManager.orderMenu.values)
+            print(dataManager.orderMenu)
             }
         }
     }
@@ -65,7 +76,8 @@ extension DetailViewController {
         }
     }
     func setUI() {
-        view.addSubview(DetailViewController.imageView)
+        view.addSubview(
+            imageView)
         view.addSubview(stackView)
         stackView.axis = .horizontal
         stackView.spacing = 0
@@ -76,15 +88,22 @@ extension DetailViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        DetailViewController.imageView.translatesAutoresizingMaskIntoConstraints = false
-        DetailViewController.imageView.backgroundColor = .orange
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        imageView.backgroundColor = .orange
         NSLayoutConstraint.activate([
-            DetailViewController.imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-            DetailViewController.imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300),
-            DetailViewController.imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            DetailViewController.imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            stackView.topAnchor.constraint(equalTo: DetailViewController.imageView.bottomAnchor, constant: 50),
+            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300),
+            
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            stackView.topAnchor.constraint(equalTo:
+                                            imageView.bottomAnchor, constant: 50),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.heightAnchor.constraint(equalToConstant: 50),
             stackView.widthAnchor.constraint(equalToConstant: 250),

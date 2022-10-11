@@ -10,7 +10,7 @@ import UIKit
 class DominoViewController: UIViewController {
     
     let tableView = UITableView()
-    let menu = ["슈퍼시드","프리미엄","클래식","사이드디시","음료","피클소스"]
+    let menu = ["oo","pp","qq","rr","ss","tt"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

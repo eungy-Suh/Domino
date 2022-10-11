@@ -11,16 +11,11 @@ class SuperSeedViewController: UIViewController, UITableViewDelegate {
     
     let tableView = UITableView()
     
-    struct Product {
-       var productTitle: String
-       var productImage: UIImage
-       var productSubTitle: String
-   }
         let SuperSeedPizza: [Product] = [
-            Product(productTitle: "우리 고구마", productImage: UIImage(named: "우리 고구마")!, productSubTitle: "10,000원"),
-            Product(productTitle: "콰트로 치즈 퐁듀", productImage: UIImage(named: "콰트로 치즈 퐁듀")!, productSubTitle: "10,000원"),
-            Product(productTitle: "알로하 하와이안", productImage: UIImage(named: "알로하 하와이안")!, productSubTitle: "10,000원"),
-            Product(productTitle: "글램핑 바비큐", productImage: UIImage(named: "글램핑 바비큐")!, productSubTitle: "10,000원")
+            Product(productTitle: "우리 고구마", productImage: UIImage(named: "g")!, productSubTitle: "10,000원"),
+            Product(productTitle: "콰트로 치즈 퐁듀", productImage: UIImage(named: "h")!, productSubTitle: "10,000원"),
+            Product(productTitle: "알로하 하와이안", productImage: UIImage(named: "i")!, productSubTitle: "10,000원"),
+            Product(productTitle: "글램핑 바비큐", productImage: UIImage(named: "j")!, productSubTitle: "10,000원")
         ]
     
     override func viewDidLoad() {
@@ -48,21 +43,21 @@ extension SuperSeedViewController: UITableViewDataSource {
             let nextVC = DetailViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)
             nextVC.title = "우리 고구마"
-            DetailViewController.imageView.image = UIImage(named: "우리 고구마")
+            nextVC.imageView.image = UIImage(named: "g")
         case 1 :
             let nextVC = DetailViewController()
             nextVC.title = "콰트로 치즈 퐁듀"
-            DetailViewController.imageView.image = UIImage(named: "콰트로 치즈 퐁듀")
+            nextVC.imageView.image = UIImage(named: "h")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 2 :
             let nextVC = DetailViewController()
             nextVC.title = "알로하 하와이안"
-            DetailViewController.imageView.image = UIImage(named: "알로하 하와이안")
+            nextVC.imageView.image = UIImage(named: "i")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 3 :
             let nextVC = DetailViewController()
             nextVC.title = "글램핑 바비큐"
-            DetailViewController.imageView.image = UIImage(named: "글램핑 바비큐")
+            nextVC.imageView.image = UIImage(named: "j")
             self.navigationController?.pushViewController(nextVC, animated: true)
 
         default:

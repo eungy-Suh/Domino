@@ -10,21 +10,15 @@ import UIKit
 class SideTableViewController: UIViewController, UITableViewDelegate {
     
     let tableView = UITableView()
-    
-    struct Product {
-       var productTitle: String
-       var productImage: UIImage
-       var productSubTitle: String
-   }
+
         let SideMenu: [Product] = [
-            Product(productTitle: "딸기 슈크림", productImage:UIImage(named: "딸기 슈크림")!, productSubTitle: "7,000원"),
-            Product(productTitle: "슈퍼곡물 치킨", productImage:UIImage(named: "슈퍼곡물 치킨")!, productSubTitle: "7,000원"),
-            Product(productTitle: "애플 크러스트 디저트", productImage:UIImage(named: "애플 크러스트 디저트")!, productSubTitle: "7,000원"),
-            Product(productTitle: "치킨퐁듀 그라탕", productImage:UIImage(named: "치킨퐁듀 그라탕")!, productSubTitle: "7,000원"),
-            Product(productTitle: "퀴노아 치킨 샐러드", productImage:UIImage(named: "퀴노아 치킨 샐러드")!, productSubTitle: "7,000원"),
-            Product(productTitle: "포테이토 순살치킨", productImage:UIImage(named: "포테이토 순살치킨")!, productSubTitle: "7,000원"),
+            Product(productTitle: "딸기 슈크림", productImage:UIImage(named: "a")!, productSubTitle: "7,000원"),
+            Product(productTitle: "슈퍼곡물 치킨", productImage:UIImage(named: "b")!, productSubTitle: "7,000원"),
+            Product(productTitle: "애플 크러스트 디저트", productImage:UIImage(named: "c")!, productSubTitle: "7,000원"),
+            Product(productTitle: "치킨퐁듀 그라탕", productImage:UIImage(named: "d")!, productSubTitle: "7,000원"),
+            Product(productTitle: "퀴노아 치킨 샐러드", productImage:UIImage(named: "e")!, productSubTitle: "7,000원"),
+            Product(productTitle: "포테이토 순살치킨", productImage:UIImage(named: "f")!, productSubTitle: "7,000원"),
         ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -50,31 +44,31 @@ extension SideTableViewController: UITableViewDataSource {
             let nextVC = DetailViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)
             nextVC.title = "딸기 슈크림"
-            DetailViewController.imageView.image = UIImage(named: "딸기 슈크림")
+            nextVC.imageView.image = UIImage(named: "a")
         case 1 :
             let nextVC = DetailViewController()
             nextVC.title = "슈퍼곡물 치킨"
-            DetailViewController.imageView.image = UIImage(named: "슈퍼곡물 치킨")
+            nextVC.imageView.image = UIImage(named: "b")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 2 :
             let nextVC = DetailViewController()
             nextVC.title = "애플 크러스트 디저트"
-            DetailViewController.imageView.image = UIImage(named: "애플 크러스트 디저트")
+            nextVC.imageView.image = UIImage(named: "c")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 3 :
             let nextVC = DetailViewController()
             nextVC.title = "치킨퐁듀 그라탕"
-            DetailViewController.imageView.image = UIImage(named: "치킨퐁듀 그라탕")
+            nextVC.imageView.image = UIImage(named: "d")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 4 :
             let nextVC = DetailViewController()
             nextVC.title = "퀴노아 치킨 샐러드"
-            DetailViewController.imageView.image = UIImage(named: "퀴노아 치킨 샐러드")
+            nextVC.imageView.image = UIImage(named: "e")
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 5 :
             let nextVC = DetailViewController()
             nextVC.title = "포테이토 순살치킨"
-            DetailViewController.imageView.image = UIImage(named: "포테이토 순살치킨")
+            nextVC.imageView.image = UIImage(named: "f")
             self.navigationController?.pushViewController(nextVC, animated: true)
 
         default:
